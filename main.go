@@ -195,6 +195,7 @@ func main() {
 	r := gin.New()
 	r.Use(gin.Recovery())
 	r.LoadHTMLGlob("templates/*")
+	r.Static("/.well-known", "./.well-known")
 
 	for _, route := range []string{
 		"ip", "ua", "port", "lang", "encoding", "method",
